@@ -2,21 +2,16 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection.js');
 
-class Traveller extends Model {}
+class Location extends Model {}
 
-Traveller.init(
+Location.init(
     {
         id: {
             type: DataTypes.INTEGER,
-            primaryKey: true,
             allowNull: false,
             autoIncrement: true,
         },
         name: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        email: {
             type: DataTypes.STRING,
             allowNull: false,
         },
@@ -27,7 +22,7 @@ Traveller.init(
         freezeTableName: true,
         underscored: true,
         modelName: 'category',
-    }
+    },
 );
 
-module.exports = Traveller;
+module.exports = Location;
