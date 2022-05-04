@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { } = require("../../models");
+const { Location, Trips } = require("../../models");
 
 router.post("/", (req, res) => {
 
