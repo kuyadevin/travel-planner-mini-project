@@ -41,18 +41,18 @@ router.get("/:id", (req, res) => {
 
 router.delete("/:id", (req, res) => {
     try {
-        const travellerData = await Traveller.destroy({
+        const TravellerData = await Traveller.destroy({
             where: {
                 id: req.params.id,
             },
         });
 
-        if (!travellerData) {
+        if (!TravellerData) {
             res.status(404).json({ message: 'No travellers found with that id!' });
             return;
         }
 
-        res.status(200).json(travellerData);
+        res.status(200).json(TravellerData);
     } catch (err) {
         res.status(500).json(err);
     }
